@@ -14,6 +14,9 @@ Another less common method is to extract randomness from entropy sources externa
 
 Here we seek to extract randomness from a source of entropy external to the information system, the sparkle of poplar leaves caressed by the breeze.
 
+![Fig.1: poplar leaves glistening in the breeze](assets/all_frame_colors.png)
+*Fig.1: poplar leaves glistening in the breeze*
+
 ## Installation
 
 You will need Python 3 to run this program. Personally I used Python 3.11.
@@ -30,7 +33,12 @@ Since we are interested in flicker, and therefore brightness, the video is conve
 
 From there, I thought of several methods to extract randomness. For example, we could search for the position of the brightest pixel every second.
 
-I chose another simpler method: I defined a small "Region Of Interest" (ROI), 50 x 50 px, in which the flicker looks particularly determined. Then, I look for the average of each pixel at each frame. I add these averages over each second, and if this result is greater than the previous second, I return **1**, **0** otherwise.
+I chose another simpler method: I defined a small "Region Of Interest" (ROI), 20 x 20 px, in which the flicker looks particularly determined. Then, I look for the average of each pixel at each frame. I add these averages over each second, and if this result is greater than the previous second, I return **1**, **0** otherwise.
+
+| ![ROI frame 1](assets/roi_frame1.jpg) | ![ROI frame 1](assets/roi_frame2.jpg) |
+|---------------------------------------|---------------------------------------|
+
+*Fig.2: 20 x 20 px ROI frames*
 
 ## Results
 
